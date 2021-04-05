@@ -1,0 +1,15 @@
+---
+title: "test2"
+author: "Jooho Lee"
+date: '2021 4 4 '
+output: 
+    bookdown::pdf_document2:
+        toc: TRUE
+header-includes:
+- \usepackage{kotex}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+

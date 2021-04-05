@@ -1,0 +1,184 @@
+---
+title: "Test"
+author: "Jooho Lee"
+date: "04/04/2021"
+output: 
+    html_document:
+        theme: readable
+---
+
+## How to inserat R code
+
+### set up chunk options
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE)
+```
+
+### Chunk
+
+echo
+
+echo=TRUE: code and results
+
+```{r testcodeWtrue, echo=TRUE}
+a <- c(1:5)
+a
+```
+
+echo=False: results only
+```{r testcodeWfalse, echo=FALSE}
+a <- c(1:5)
+a
+```
+
+eval option
+
+eval=T
+```{r testcodeEvalTRUE, eval=T}
+result1 <- mean(a)
+```
+eval=F
+```{r testcodeEvalFalse, eval=F}
+result2 <- median(a)
+```
+```{r}
+result1
+```
+run code but do not show results
+
+```{r testcodeResultoption, eval=T, results='hide'}
+b <- c(1:100)
+b
+```
+
+### insert r code in main text
+This is a main text. The mean of vector a is `r result1`. 
+
+#### short key: ctrl+Alt+i
+```{r}
+max(a)
+```
+## chunk option
+#### show message를 선택하지 않았을때
+```{r}
+library(dplyr)
+```
+
+##### show message를 선택했을때
+```{r message=FALSE}
+library(dplyr)
+```
+
+### Scatter Plot of Iris Data
+```{r irisplot, echo=F}
+data("iris")
+library(ggplot2)
+ggplot(iris)+
+    aes(x=Sepal.Length, y=Sepal.Width, color=Species)+
+    geom_point(size=1L)+
+    scale_color_hue()+
+    labs(title="Iris Data Scatter")+
+    theme_minimal()
+```
+
+
+
+## Markdown?
+
+Similar to MS word Design
+
+`#` heading
+
+# Heading 1
+## Heading 2
+### Heading 3
+
+### 본문을 강조하는 방법
+italic *Italic* 
+
+bold는 **Italic**
+
+교정은 ~Italic~
+
+### 본문에 리스트 넣은법
+첫째, 숫자가 있는 리스트
+
+1. 딸기
+
+1. 바나나
+
+1. 사과
+    1. 하위리스트1
+    1. 하위리스트2
+
+두번째는 숫자가 없은 리스트
+
+* 딸기
+* 수박
+    - 하위리스트
+    - 하위리스트
+* 바나나
+
+### 본문에 수학 모드 입력하기
+
+1
+
+1개 $1$개
+
+* 본문 안에서 숫자 혹이느 수식 입력: `$` 기호 $1$
+* 본문 밖에서 숫자 혹은 수식 입력: `$` 기호 $2$개로 (display수식)
+
+예를 들어, 수식
+
+$$\int_{1}^{10}xdx$$
+
+테이블
+
+
+Table Header | Second Header
+-------------| -------------
+Table Cell   | Cell 2
+Cell 3       | Cell 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
